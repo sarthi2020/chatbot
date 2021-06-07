@@ -1,6 +1,5 @@
 numpy
 streamlit
-random
 nltk
 nltk.stem
 tensorflow
