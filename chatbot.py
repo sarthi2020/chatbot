@@ -18,8 +18,8 @@ from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 import streamlit as st
 from tensorflow.keras.models import load_model
-# nltk.download("punkt")
-# nltk.download("wordnet")
+nltk.download("punkt")
+nltk.download("wordnet")
 class Chatbot:
 	def __init__(self):
 		self.data = {"indents":[{
