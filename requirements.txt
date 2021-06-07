@@ -1,6 +1,5 @@
 numpy
 streamlit
-string
 random
 nltk
 nltk.stem
