@@ -1,4 +1,22 @@
-numpy
-streamlit
-nltk
-tensorflow-cpu
+absl-py==0.12.0
+altair==4.1.0
+appnope==0.1.0
+argon2-cffi==20.1.0
+as==0.1
+astor==0.8.1
+astunparse==1.6.3
+attrs==20.2.0
+backcall==0.2.0
+base58==2.1.0
+beautifulsoup4==4.5.3
+bleach==3.1.5
+blinker==1.4
+brotlipy==0.7.0
+cached-property==1.5.2
+cachetools==4.2.2
+catboost==0.24.1
+certifi==2020.6.20
+cffi @ file:///opt/concourse/worker/volumes/live/0ad2b258-abb3-46e4-4f4f-d697ae9d6060/volume/cffi_1598370762817/work
+chardet==3.0.4
+click==7.1.2
+conda==4.8.4
