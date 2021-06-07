@@ -1,6 +1,5 @@
 numpy
 streamlit
-json
 string
 random
 nltk
