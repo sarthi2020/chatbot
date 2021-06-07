@@ -1,5 +1,4 @@
 numpy
 streamlit
 nltk
-tensorflow
-
+tensorflow-cpu
