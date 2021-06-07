@@ -1,7 +1,6 @@
 numpy
 streamlit
 nltk
-nltk.stem
 tensorflow
 tensorflow.keras
 tensorflow.keras.layers
