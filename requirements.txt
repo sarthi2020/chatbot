@@ -8,4 +8,4 @@ nltk.stem
 tensorflow
 tensorflow.keras
 tensorflow.keras.layers
-from tensorflow.keras.models
+tensorflow.keras.models
