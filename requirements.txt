@@ -2,3 +2,5 @@ numpy
 streamlit
 nltk
 tensorflow-cpu
+string
+random
