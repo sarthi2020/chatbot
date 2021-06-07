@@ -1,0 +1,11 @@
+numpy
+streamlit
+json
+string
+random
+nltk
+nltk.stem
+tensorflow
+tensorflow.keras
+tensorflow.keras.layers
+from tensorflow.keras.models
