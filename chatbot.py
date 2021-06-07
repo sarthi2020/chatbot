@@ -7,7 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/1Dii60cpzuSgwBxCFv6HKwWzmrFFrJJxX
 """
 
-
+import json
+import string
+import random
 import nltk
 import numpy as np
 from nltk.stem import WordNetLemmatizer 
