@@ -1,5 +1,5 @@
-nltk
 streamlit
+nltk
 tensorflow-cpu
 numpy
 random2
