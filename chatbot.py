@@ -5,9 +5,9 @@ Original file is located at
     https://colab.research.google.com/drive/1Dii60cpzuSgwBxCFv6HKwWzmrFFrJJxX
 """
 
-import json
-import string
-import random
+# import json
+# import string
+import random2
 import nltk
 import numpy as np
 from nltk.stem import WordNetLemmatizer 
@@ -16,8 +16,8 @@ from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 import streamlit as st
 from tensorflow.keras.models import load_model
-nltk.download("punkt")
-nltk.download("wordnet")
+# nltk.download("punkt")
+# nltk.download("wordnet")
 class Chatbot:
 	def __init__(self):
 		self.data = {"indents":[{
@@ -71,6 +71,8 @@ class Chatbot:
 		self.trainX = []
 		self.trainY = []
 		self.train = []
+		self.punctuation = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+		self.dict = {}
 	
 	def lemmatization(self,text):
 	  tokens = nltk.word_tokenize(text)
@@ -89,7 +91,7 @@ class Chatbot:
 		    self.docX.append(question)
 		    self.docY.append(indent["type"])
 
-		self.dictionary = [word for word in self.dictionary if word not in string.punctuation]
+		self.dictionary = [word for word in self.dictionary if word not in self.punctuation]
 
 		#sorted to sort and set to remove duplicates
 		self.dictionary = sorted(set(self.dictionary))
@@ -115,7 +117,7 @@ class Chatbot:
 		  # print(sum(bow))
 		  self.train.append([bow,output])
 
-		random.shuffle(self.train)
+		random2.shuffle(self.train)
 		self.train = np.array(self.train, dtype=object)
 
 		self.trainX = np.array(list(self.train[:, 0]))
@@ -156,19 +158,23 @@ class Chatbot:
 	    # if(sum(bow)==0):
 	    # 	for indent in self.data["indents"]:
 	    # 		if(indent['type'] == 'noanswer'):
-	    # 			finaloutput = random.choice(indent["answers"])
+	    # 			finaloutput = random2.choice(indent["answers"])
 	    # else:
 	    result = self.model.predict(np.array([bow]))[0]
 	    y_pred = [[id,value] for id,value in enumerate(result)]
 	    y_pred.sort(key=lambda x: x[1], reverse=True) 
-	    print(y_pred)
 	    output = self.classes[y_pred[0][0]]
-	    print(output)
 	    for indent in self.data["indents"]:
 	      if(indent['type'] == output):
-	        finaloutput = random.choice(indent["answers"])
-	        print(finaloutput)
+	        finaloutput = random2.choice(indent["answers"])
 	    return finaloutput
+
+	def setruntimedata(self,key,value):
+		self.dict[key] = value
+
+	def getruntimedata(self):
+		return self.dict
+
 
 
 if __name__ == "__main__":
@@ -177,20 +183,4 @@ if __name__ == "__main__":
 	chatbot.getdata()
 	chatbot.training()
 	chatbot.save()
-'''
-st.title("Chatbot")
-st.write("Hi, user!!!!")
-input = st.text_input("Ask me anything")
-print(input)
-submit = st.button("Predict")
-st.write("Input : Output")
-print(submit)
-dict = {}
-if submit:
-	print("heree")
-	finaloutput = get_prediction(input,classes,dictionary,data)
-	dict[input] = finaloutput
-	for key in dict.keys():
-		print(key+"   "+ dict[key])
-		st.write(key+" : "+dict[key])
-'''
+

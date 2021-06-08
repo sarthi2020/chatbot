@@ -15,15 +15,13 @@ print(input)
 
 submit = st.button("Predict")
 
-@st.cache(allow_output_mutation=True)
-def dictionary():
-    dict = {}
-    return dict
 
-dict = dictionary()
 if submit:
     finaloutput = chatbot.get_prediction(input)
-    dict[input] = finaloutput
+    chatbot.setruntimedata(input,finaloutput)
+    # dict[input] = finaloutput
+
+dict = chatbot.getruntimedata()
 
 for key in dict.keys():
     st.markdown("<h4 style='text-align: left; color: #f59920;'>{}</h4>".format(key), unsafe_allow_html=True)
