@@ -5,9 +5,7 @@ Original file is located at
     https://colab.research.google.com/drive/1Dii60cpzuSgwBxCFv6HKwWzmrFFrJJxX
 """
 
-import json
-import string
-import random
+import random2
 import nltk
 import numpy as np
 from nltk.stem import WordNetLemmatizer 
@@ -71,6 +69,7 @@ class Chatbot:
 		self.trainX = []
 		self.trainY = []
 		self.train = []
+		self.punctuation = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 	
 	def lemmatization(self,text):
 	  tokens = nltk.word_tokenize(text)
@@ -89,7 +88,7 @@ class Chatbot:
 		    self.docX.append(question)
 		    self.docY.append(indent["type"])
 
-		self.dictionary = [word for word in self.dictionary if word not in string.punctuation]
+		self.dictionary = [word for word in self.dictionary if word not in self.punctuation]
 
 		#sorted to sort and set to remove duplicates
 		self.dictionary = sorted(set(self.dictionary))
@@ -115,7 +114,7 @@ class Chatbot:
 		  # print(sum(bow))
 		  self.train.append([bow,output])
 
-		random.shuffle(self.train)
+		random2.shuffle(self.train)
 		self.train = np.array(self.train, dtype=object)
 
 		self.trainX = np.array(list(self.train[:, 0]))
@@ -156,7 +155,7 @@ class Chatbot:
 	    # if(sum(bow)==0):
 	    # 	for indent in self.data["indents"]:
 	    # 		if(indent['type'] == 'noanswer'):
-	    # 			finaloutput = random.choice(indent["answers"])
+	    # 			finaloutput = random2.choice(indent["answers"])
 	    # else:
 	    result = self.model.predict(np.array([bow]))[0]
 	    y_pred = [[id,value] for id,value in enumerate(result)]
@@ -166,7 +165,7 @@ class Chatbot:
 	    print(output)
 	    for indent in self.data["indents"]:
 	      if(indent['type'] == output):
-	        finaloutput = random.choice(indent["answers"])
+	        finaloutput = random2.choice(indent["answers"])
 	        print(finaloutput)
 	    return finaloutput
 
