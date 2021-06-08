@@ -14,6 +14,7 @@ blinker==1.4
 brotlipy==0.7.0
 cached-property==1.5.2
 cachetools==4.2.2
+<<<<<<< HEAD
 catboost==0.24.1
 certifi==2020.6.20
 cffi @ file:///opt/concourse/worker/volumes/live/0ad2b258-abb3-46e4-4f4f-d697ae9d6060/volume/cffi_1598370762817/work
@@ -46,11 +47,24 @@ ImageHash==4.1.0
 imageio==2.9.0
 imbalanced-learn==0.7.0
 importlib-metadata==1.7.0
+=======
+certifi==2020.6.20
+chardet==3.0.4
+click==7.1.2
+confuse==1.3.0
+cycler==0.10.0
+GitPython==3.1.17
+graphviz==0.14.1
+h5py==3.1.0
+htmlmin==0.1.12
+idna==2.9
+>>>>>>> 160feb355039983b7c1ab3378c5829fc9689d82c
 imutils==0.5.4
 ipykernel==5.3.4
 ipython==7.16.1
 ipython-genutils==0.2.0
 ipywidgets==7.5.1
+<<<<<<< HEAD
 jedi==0.17.2
 Jinja2==2.11.2
 joblib==0.16.0
@@ -164,3 +178,16 @@ wrapt==1.12.1
 xgboost==1.2.0
 xlrd==1.2.0
 zipp==3.1.0
+=======
+keras-nightly==2.5.0.dev2021032900
+Keras-Preprocessing==1.1.2
+nltk==3.5
+numpy==1.19.5
+python-dateutil==2.8.1
+python-Levenshtein==0.12.0
+python-utils==2.5.5
+tensorflow-cpu
+utils==1.0.1
+
+
+>>>>>>> 160feb355039983b7c1ab3378c5829fc9689d82c
