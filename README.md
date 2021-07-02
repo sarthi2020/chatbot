@@ -7,3 +7,7 @@ It will do the preprocessing and training and will save the model(.h5 file forma
 
 2) streamlit run ui.py
 It will load the model trained in part 1 and will create a web app which will run local browser.
+
+
+link to deployed app:
+https://generative-chatbot.herokuapp.com
